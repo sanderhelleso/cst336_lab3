@@ -1,4 +1,1 @@
-
-#
-
-# cst336lab3_partner_proj
+# Hello from Sander
