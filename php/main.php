@@ -1,4 +1,6 @@
 <?php
+    // start time of script
+    $starttime = microtime(true);
     
     /*** GLOBALS ***/
     $deck = $deck = array();
@@ -122,4 +124,9 @@
         return $playerCards;
     }
     
+    // end time of script
+    $endtime = microtime(true);
+    
+    // print out the 
+    echo "Page loaded in " . round(($endtime - $starttime), 5) . " secounds";
 ?>
