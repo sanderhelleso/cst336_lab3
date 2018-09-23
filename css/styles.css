@@ -16,8 +16,9 @@
     text-align: center;
     background-color: orange;
     border-radius: 20px 15px;
-    
-    
+    opacity: .8;
+    text-transform: uppercase;
+    font-family: 'Unlock', cursive;
 }
 #cardtable {
     width: 100%;
