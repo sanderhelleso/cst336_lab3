@@ -72,13 +72,26 @@
         
         // print out winner
         echo "<h2>Winner is Player " . (array_search($winnerScore, $scores) + 1) . "</h2><p>with " . array_sum($scores) . " score!</p><br><br>";
-        
+       
         // print out score for each player, player score and hand of cards
         foreach($players as $player => $playerCards) {
             echo $player . " - Score: " . getHandScore($playerCards);
             echo "<br>";
             
             $dirCounter = 0;
+            // player picture selector cant seem to make it not choose the same picsome times.ill work on again tomorrow
+            $pic = playerPic();
+            $t_pic = $pic;
+            $noMatch_Pic = array();
+            array_push($noMatch_Pic,$t_pic);
+            foreach($noMatch_Pic as $img) {
+                if($img == $pic) {
+                   $pic = playerPic(); 
+                }
+            }
+            
+            echo "<img src='img/$pic.jpg' id='picture'>";
+            
             foreach($playerCards as $card) {
                 // get folder with unique deck card
                 $dir = array_diff(scandir($GLOBALS['path']), array());
@@ -122,6 +135,13 @@
         }
         
         return $playerCards;
+    }
+
+    function playerPic() {
+          $playersimg = array("player1", "player2", "player3", "player4");
+          shuffle($playersimg);
+          $pic = $playersimg[0];
+          return $pic;
     }
     
     // end time of script

@@ -24,3 +24,7 @@
     width: 100%;
     
 }
+#picture {
+    max-height: 50px;
+    max-width: 50px;
+}
