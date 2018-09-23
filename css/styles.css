@@ -1,0 +1,25 @@
+#background {
+    background-image: url(https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350);
+    
+  
+}
+#border {
+    border-style: solid;
+    border-bottom-width: medium;
+    background-color: white;
+    padding: 10px;
+    opacity: .9;
+    border-radius: 20px 20px;
+}
+#title {
+    border:solid medium;
+    text-align: center;
+    background-color: orange;
+    border-radius: 20px 15px;
+    
+    
+}
+#cardtable {
+    width: 100%;
+    
+}
