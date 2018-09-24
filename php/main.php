@@ -72,25 +72,27 @@
         
         // print out winner
         echo "<h2>Winner is Player " . (array_search($winnerScore, $scores) + 1) . "</h2><p>with " . array_sum($scores) . " score!</p><br><br>";
-       
-        // print out score for each player, player score and hand of cards
+       $pic = playerPic();
+       $index_Pic = 0;
+       $t_pic;
+       $name_Array = array("Jhon", "Jacob", "Jingle", "Jangle");
+       shuffle($name_Array);
+       $t_Name;
+       $index_Name = 0;
+        // print out score for each player, player score and hand of cards need to make the names macth the pictures
         foreach($players as $player => $playerCards) {
-            echo $player . " - Score: " . getHandScore($playerCards);
+            // Random name selector, from shuffled pre-set names.
+            $t_Name = $name_Array[$index_Name];
+            $index_Name += 1;
+            echo $t_Name . " - Score: " . getHandScore($playerCards);
             echo "<br>";
             
             $dirCounter = 0;
-            // player picture selector cant seem to make it not choose the same picsome times.ill work on again tomorrow
-            $pic = playerPic();
-            $t_pic = $pic;
-            $noMatch_Pic = array();
-            array_push($noMatch_Pic,$t_pic);
-            foreach($noMatch_Pic as $img) {
-                if($img == $pic) {
-                   $pic = playerPic(); 
-                }
-            }
-            
-            echo "<img src='img/$pic.jpg' id='picture'>";
+            // player picture selector from shuffled array then indexes through for each hand.
+          
+            $t_pic = $pic[$index_Pic];
+            $index_Pic += 1;
+            echo "<img src='img/$t_pic.jpg' id='picture'>";
             
             foreach($playerCards as $card) {
                 // get folder with unique deck card
@@ -141,7 +143,7 @@
           $playersimg = array("player1", "player2", "player3", "player4");
           shuffle($playersimg);
           $pic = $playersimg[0];
-          return $pic;
+          return $playersimg;
     }
     
     // end time of script
