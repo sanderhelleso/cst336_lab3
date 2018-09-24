@@ -69,14 +69,16 @@
         
         // get winner
         $winnerScore = getWinner($scores);
-        
+        $name_Array = array("Jhon", "Jacob", "Jingle", "Jangle");
+        shuffle($name_Array);
+        $num = (array_search($winnerScore, $scores));
         // print out winner
-        echo "<h2>Winner is Player " . (array_search($winnerScore, $scores) + 1) . "</h2><p>with " . array_sum($scores) . " score!</p><br><br>";
+        echo "<h2>Winner is $name_Array[$num]" . "</h2><p>with " . array_sum($scores) . " score!</p><br><br>";
        $pic = playerPic();
        $index_Pic = 0;
        $t_pic;
-       $name_Array = array("Jhon", "Jacob", "Jingle", "Jangle");
-       shuffle($name_Array);
+       //$name_Array = array("Jhon", "Jacob", "Jingle", "Jangle");
+       //shuffle($name_Array);
        $t_Name;
        $index_Name = 0;
         // print out score for each player, player score and hand of cards need to make the names macth the pictures
