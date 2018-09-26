@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+    
     // start time of script
     $starttime = microtime(true);
     
@@ -151,6 +154,14 @@
     // end time of script
     $endtime = microtime(true);
     
-    // print out the 
-    echo "Page loaded in " . round(($endtime - $starttime), 5) . " secounds";
+    
+    // update session variables
+    $_SESSION["timesPlayed"] = $_SESSION["timesPlayed"] + 1; ;
+    $_SESSION["averageTime"] = $_SESSION["averageTime"] + round(($endtime - $starttime), 5) / $_SESSION["timesPlayed"];
+    
+    
+    // print out the session data
+    echo "<br><hr>Page loaded in " . round(($endtime - $starttime), 5) . " seconds";
+    echo "<br>Average load time is " . $_SESSION["averageTime"] . " seconds";
+    echo "<br>Rounds played are currently " .  $_SESSION["timesPlayed"];
 ?>

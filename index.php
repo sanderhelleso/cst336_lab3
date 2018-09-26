@@ -1,4 +1,10 @@
-
+<?  
+    session_start();
+    
+    // session variables
+    $_SESSION["timesPlayed"] = 0;
+    $_SESSION["averageTime"] = 0;
+?>
 <!DOCTYPE html>
 <html>
     <head>
